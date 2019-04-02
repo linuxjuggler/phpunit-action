@@ -21,4 +21,9 @@ This will:
 
 ## License
 
-The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE.md).
+The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE).
+
+
+## Note:
+
+This is still a work in progress project, use it on your own.

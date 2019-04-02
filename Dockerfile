@@ -1,0 +1,30 @@
+FROM php:7.3-alpine
+
+LABEL "com.github.actions.name"="Trigger PHPUnit test" \
+	  "com.github.actions.description"="GitHub Action for triggering a test using phpunit" \
+	  "com.github.actions.icon"="play" \
+	  "com.github.actions.color"="gray" \
+	  "repository"="https://github.com/linuxjuggler/phpunit-action" \
+	  "homepage"="https://github.com/linuxjuggler" \
+	  "maintainer"="Zaher Ghaibeh <zaher@zah.me>"
+
+RUN set -ex \
+  	&& apk update \
+    && apk add --no-cache git curl openssh-client icu libpng freetype libzip \
+       libjpeg-turbo libffi-dev libsodium \
+    && apk add --no-cache --virtual build-dependencies icu-dev libxml2-dev freetype-dev libzip-dev libpng-dev \
+        libjpeg-turbo-dev g++ make autoconf libsodium-dev\
+    && docker-php-source extract \
+    && pecl install redis libsodium xdebug \
+    && docker-php-ext-enable xdebug redis sodium \
+    && docker-php-source delete \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) pdo intl zip gd \
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && cd  / && rm -fr /src \
+    && apk del build-dependencies \
+    && rm -rf /tmp/*
+
+ADD entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
