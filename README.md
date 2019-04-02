@@ -10,7 +10,7 @@ The PHPUnit action requires no arguments. An example:
 
 ```
 action "PHPUnit Action" {
-  uses = "linuxjuggler/phpunit-action@0.1"
+  uses = "linuxjuggler/phpunit-action@v0.1"
 }
 ```
 
