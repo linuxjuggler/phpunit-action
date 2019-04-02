@@ -9,7 +9,7 @@ your database functionality (yet).
 The PHPUnit action requires no arguments. An example:
 
 ```
-action "linuxjuggler/phpunit-action" {
+action "PHPUnit Action" {
   uses = "linuxjuggler/phpunit-action@0.1"
 }
 ```
