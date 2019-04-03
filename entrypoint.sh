@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -eu
+set -ex
 
 composer self-update
 composer global require hirak/prestissimo
