@@ -3,7 +3,7 @@ FROM php:7.3-alpine
 LABEL "com.github.actions.name"="Trigger PHPUnit test"
 LABEL "com.github.actions.description"="GitHub Action for triggering a test using phpunit"
 LABEL "com.github.actions.icon"="play"
-LABEL "com.github.actions.color"="gray"
+LABEL "com.github.actions.color"="blue"
 LABEL "repository"="https://github.com/linuxjuggler/phpunit-action"
 LABEL "homepage"="https://github.com/linuxjuggler"
 LABEL "maintainer"="Zaher Ghaibeh <zaher@zah.me>"
