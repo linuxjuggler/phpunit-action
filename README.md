@@ -10,8 +10,8 @@ The PHPUnit action requires no arguments. An example:
 
 ```
 workflow "PHPUnit testing" {
-	on = "push"
-	resolves = ["PHPUnit Action"]
+  on = "push"
+  resolves = ["PHPUnit Action"]
 }
 
 action "PHPUnit Action" {
