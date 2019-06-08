@@ -56,6 +56,13 @@ action "PHPUnit Action" {
 }
 ```
 
+## Testing Guthub Actions locally
+
+One of the best tools I've found is `act`, which can be found at [nektos/act](https://github.com/nektos/act). With it 
+installed locally on your system you can test your actions workflow even before you push anything to github. Please 
+check the [act repository](https://github.com/nektos/act) for more information.
+
+
 ## License
 
 The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE).
