@@ -24,6 +24,38 @@ This will:
 1. Install all the required php packages.
 2. Run `phpunit` and test your code.
 
+
+## Laravel users note
+
+If you are a laravel user, just remember that your tests won't work unless you set the `APP_KEY` environment value,
+so you should generate one locally using the command
+
+```shell
+$ php artisan key:generate --show
+```
+
+which will output something like
+
+```
+base64:SkHcrzzvsl66A3Yv3ixxhB5okZaHJnRA2DixnyJPHxY=
+```
+
+then you should copy that value and add it as the value for your `APP_KEY` variable, like the following example:
+
+```
+workflow "PHPUnit testing" {
+  on = "push"
+  resolves = ["PHPUnit Action"]
+}
+
+action "PHPUnit Action" {
+  uses = "linuxjuggler/phpunit-action@master"
+  env = {
+    APP_KEY = "base64:SkHcrzzvsl66A3Yv3ixxhB5okZaHJnRA2DixnyJPHxY="
+  }
+}
+```
+
 ## License
 
 The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE).
