@@ -9,8 +9,13 @@ your database functionality (yet).
 The PHPUnit action requires no arguments. An example:
 
 ```
+workflow "PHPUnit testing" {
+	on = "push"
+	resolves = ["PHPUnit Action"]
+}
+
 action "PHPUnit Action" {
-  uses = "linuxjuggler/phpunit-action@v0.2"
+  uses = "linuxjuggler/phpunit-action@master"
 }
 ```
 

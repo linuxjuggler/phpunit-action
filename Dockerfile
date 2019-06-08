@@ -1,12 +1,12 @@
 FROM php:7.3-alpine
 
-LABEL "com.github.actions.name"="Trigger PHPUnit test" \
-	  "com.github.actions.description"="GitHub Action for triggering a test using phpunit" \
-	  "com.github.actions.icon"="play" \
-	  "com.github.actions.color"="gray" \
-	  "repository"="https://github.com/linuxjuggler/phpunit-action" \
-	  "homepage"="https://github.com/linuxjuggler" \
-	  "maintainer"="Zaher Ghaibeh <zaher@zah.me>"
+LABEL "com.github.actions.name"="Trigger PHPUnit test"
+LABEL "com.github.actions.description"="GitHub Action for triggering a test using phpunit"
+LABEL "com.github.actions.icon"="play"
+LABEL "com.github.actions.color"="gray"
+LABEL "repository"="https://github.com/linuxjuggler/phpunit-action"
+LABEL "homepage"="https://github.com/linuxjuggler"
+LABEL "maintainer"="Zaher Ghaibeh <zaher@zah.me>"
 
 RUN set -ex \
   	&& apk update \
@@ -25,6 +25,6 @@ RUN set -ex \
     && apk del build-dependencies \
     && rm -rf /tmp/*
 
-ADD entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
