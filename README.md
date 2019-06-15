@@ -3,6 +3,8 @@
 The PHPUnit Action is mainly used for Testing your PHP application, this action does not have the capability to test
 your database functionality (yet).
 
+It assume that you already required [PHPUnit](https://phpunit.de/) within your `composer.json` file.
+
 
 ## Usage
 
