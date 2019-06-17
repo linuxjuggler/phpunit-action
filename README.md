@@ -1,9 +1,10 @@
-# PHPUnit Action for Testing your PHP application
+# PHPUnit 8 Action for Testing your PHP application
 
 The PHPUnit Action is mainly used for Testing your PHP application, this action does not have the capability to test
 your database functionality (yet).
 
-It assume that you already required [PHPUnit](https://phpunit.de/) within your `composer.json` file.
+The script does not assume that you have installed [PHPUnit](https://phpunit.de/) already, but it uses a global version
+that is installed on the system.
 
 
 ## Usage
